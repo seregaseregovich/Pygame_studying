@@ -9,7 +9,7 @@ screen = pygame.display.set_mode(size)
 name = "My first game"
 pygame.display.set_caption(name)
 
-# loading the image of shortcut:
+# loading the image of shortcut (icon):
 # the image must be placed in the same
 # directory in advance
 # img = pygame.image.load("image_file_name.png")
@@ -22,8 +22,9 @@ font = pygame.font.SysFont('arialblack', 2)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+# setting the text: text, antialias, colour, background colour
 follow1 = font.render("0000", True, (0, 255, 0), (0, 255, 0))
-follow2 = font.render("0000", True, (255, 0, 0), (255, 0, 0))
+follow2 = font.render("asfdgfgnh", True, (255, 0, 0), (255, 0, 0))
 follow3 = font.render("0000", True, (255, 255, 0), (255, 255, 0))
 follow4 = font.render("0000", True, (0, 0, 255), (0, 0, 255))
 x1, y1 = 10, 30
@@ -38,14 +39,19 @@ dx3 = 1
 dy3 = 3
 dx4 = 4
 dy4 = 2
+# module pygame.time and class Clock -
+# to adjust objects moving speed
 clock = pygame.time.Clock()
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             quit()
+    # to adjust objects moving speed
     clock.tick(100)
+    # to fill screen by black colour
+    # before the next move of rhe object
     screen.fill((0,0,0))
-    # chanding text's coordinates
+    # displaying (rendering) text with coordinates (x, y)
     screen.blit(follow1, (x1, y1))
     screen.blit(follow2, (x2, y2))
     screen.blit(follow3, (x3, y3))
