@@ -32,12 +32,12 @@ x3, y3 = 50, 70
 x4, y4 = 70, 90
 dx1 = 1
 dy1 = 1
-dx2 = 1
+dx2 = 2
 dy2 = 1
 dx3 = 1
-dy3 = 1
-dx4 = 1
-dy4 = 1
+dy3 = 3
+dx4 = 4
+dy4 = 2
 clock = pygame.time.Clock()
 while True:
     for event in pygame.event.get():
@@ -52,27 +52,27 @@ while True:
     screen.blit(follow4, (x4, y4))
     x1 += dx1
     y1 += dy1
-    if x1 == 350 or x1 == 0:
+    if x1 > 350 or x1 < 0:
         dx1 = -dx1
-    if y1 == 240 or y1 == 0:
+    if y1 > 240 or y1 < 0:
         dy1 = -dy1
     x2 += dx2
     y2 += dy2
-    if x2 == 350 or x2 == 0:
+    if x2 > 350 or x2 < 0:
         dx2 = - dx2
-    if y2 == 240 or y2 == 0:
+    if y2 > 240 or y2 < 0:
         dy2 = -dy2
     x3 += dx3
     y3 += dy3
-    if x3 == 350 or x3 == 0:
+    if x3 > 350 or x3 < 0:
         dx3 = -dx3
-    if y3 == 240 or y3 == 0:
+    if y3 > 240 or y3 < 0:
         dy3 = -dy3
     x4 += dx4
     y4 += dy4
-    if x4 == 350 or x4 == 0:
+    if x4 > 350 or x4 < 0:
         dx4 = -dx4
-    if y4 == 240 or y4 == 0:
+    if y4 > 240 or y4 < 0:
         dy4 = -dy4
     pygame.display.update()
 
